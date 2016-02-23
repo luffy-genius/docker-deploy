@@ -1,4 +1,4 @@
-FROM registry.aliyuncs.com/alex3714/crazyeye:v3
+FROM myregistrydomain.com:5000/crazyeye:v2
 
 
 
@@ -7,5 +7,5 @@ RUN echo "Asia/Shanghai" > /etc/timezone; dpkg-reconfigure -f noninteractive tzd
 WORKDIR /
 
 #Add repo data into container
-ADD . /test_code
+ADD ../ /opt/CrazyEye2
 
