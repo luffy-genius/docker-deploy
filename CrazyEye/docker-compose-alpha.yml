@@ -6,13 +6,13 @@ nginx:
     - "8000:8000"
   volumes:
     - ./ngnix_logs:/var/log/nginx
-    - ./settings.py:/opt/CrazyEye/CrazyEye/settings.py
+    #- ./settings.py:/opt/CrazyEye/CrazyEye/settings.py
     #- /opt/CrazyEye/
   #command: /opt/CrazyEye/entrypoint_nginx.sh
   links:
     - mysql
     - shellinabox
-  command: bash -c  "service nginx start && uwsgi --ini /opt/CrazyEye/crazyeye_uwsgi.ini"
+  command: bash -c  "service nginx start && uwsgi --ini /opt/CrazyEye2/crazyeye_uwsgi.ini"
 
 mysql:
   hostname: crazyeye_mysql
@@ -35,6 +35,6 @@ shellinabox:
     - "8022:22"
   links:
     - mysql
-  volumes:
-    - ./settings.py:/opt/CrazyEye/CrazyEye/settings.py
+  #volumes:
+  #  - ./settings.py:/opt/CrazyEye2/CrazyEye/settings.py
   command: bash -c "service ssh start && /opt/shellinabox/shellinaboxd  -t" 
