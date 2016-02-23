@@ -1,7 +1,7 @@
 nginx:
   hostname: crazyeye_server
   container_name: crazyeye_nginx
-  image: registry.aliyuncs.com/alex3714/crazyeye:alpha-
+  image: myregistrydomain.com:5000/crazyeye:alpha-
   ports:
     - "8000:8000"
   volumes:
@@ -17,7 +17,7 @@ nginx:
 mysql:
   hostname: crazyeye_mysql
   container_name: crazyeye_mysql
-  image: registry.aliyuncs.com/alex3714/crazyeye:alpha-
+  image: myregistrydomain.com:5000/crazyeye:alpha-
   ports:
     - "3306:3306"
   volumes:
@@ -29,7 +29,7 @@ mysql:
 shellinabox:
   hostname: crazyeye_shell
   container_name: crazyeye_shellinabox
-  image: registry.aliyuncs.com/alex3714/crazyeye:alpha-
+  image: myregistrydomain.com:5000/crazyeye:alpha-
   ports:
     - "4200:4200"
     - "8022:22"
@@ -37,4 +37,4 @@ shellinabox:
     - mysql
   volumes:
     - ./settings.py:/opt/CrazyEye/CrazyEye/settings.py
-  command: bash -c "service ssh start && /opt/shellinabox/shellinaboxd  -t"
+  command: bash -c "service ssh start && /opt/shellinabox/shellinaboxd  -t" 
