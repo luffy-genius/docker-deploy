@@ -7,5 +7,5 @@ RUN echo "Asia/Shanghai" > /etc/timezone; dpkg-reconfigure -f noninteractive tzd
 WORKDIR /
 
 #Add repo data into container
-ADD ../ /opt/CrazyEye2
+ADD . /opt/CrazyEye2
 
